@@ -1,0 +1,145 @@
+# Exercicios
+
+# 1. Escreva uma função que retorne o maior número entre dois números.
+
+
+def máximo(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+
+
+print(f"máximo(3,6) == 6 -> obtido: {máximo(5,6)}")
+
+# 2. Faça uma função que retorne o reverso de um número inteiro informado. Por exemplo: 127 -> 721.
+
+
+def reverso(n):
+    return str(n[::-1])
+
+
+n = str(input("Digite um número: ")).strip()
+print(f"Reverso: {reverso(n)}")
+
+
+# 3. Faça um programa para imprimir:
+#     1
+#     1   2
+#     1   2   3
+#     .....
+#     1   2   3   ...  n
+# para um n informado pelo usuário. Use uma função que receba um valor x inteiro como parâmetro e imprima uma linha com 1 até x.
+# Se x = 1 na função, imprime:
+# 1
+# Se x = 2 na função, imprime:
+# 1   2
+# E assim por diante.
+
+
+def imprime_linha(x):
+    for i in range(1, x + 1):
+        print(i, end=" ")
+    print()
+
+
+n = int(input("Digite um valor para n: "))
+
+for i in range(1, n + 1):
+    imprime_linha(i)
+
+
+# 4. Faça uma função que verifique se um valor é perfeito ou não.
+# Um valor é dito perfeito quando ele é igual a soma dos seus divisores excetuando ele próprio.
+# (Ex: 6 é perfeito, 6 = 1 + 2 + 3, que são seus divisores). A função deve retornar um valor booleano.
+
+
+def n_perfeito(n):
+    soma_divisores = 0
+    for i in range(1, n):
+        if n % i == 0:
+            soma_divisores += i
+
+    return soma_divisores == n
+
+
+# 5.  Crie uma função e dê o nome pertinente para a mesma, essa função deve retornar um dicionário
+# com os dados abaixo:
+# Matricula - Nome      - Sexo - Departamento - TempoServiço - Salario
+#     1     - Ana       -  F   -     TI       -      7       - 3200
+#     2     - Beatriz   -  F   -     TI       -      4       - 3720
+#     3     - Carla     -  F   -     TI       -      1       - 2100
+#     4     - Daniela   -  F   -     RH       -      2       - 3920
+#     5     - Emílio    -  M   -     RH       -      7       - 4235
+#     6     - Fernando  -  M   -     RP       -      7       - 1200
+#     7     - Gabriela  -  F   -     RP       -      8       - 7234.89
+#     8     - Hernandes -  M   -     TI       -      6       - 4234.12
+
+
+def criar_dicionario_de_funcionarios():
+
+    funcionarios = {
+    "1": {
+      "nome": "Ana",
+      "sexo": "F",
+      "departamento": "TI",
+      "tempo_de_serviço": 7,
+      "salario": 3200
+    },
+    "2": {
+      "nome": "Beatriz",
+      "sexo": "F",
+      "departamento": "TI",
+      "tempo_de_serviço": 4,
+      "salario": 3720
+    },
+    "3": {
+      "nome": "Carla",
+      "sexo": "F",
+      "departamento": "TI",
+      "tempo_de_serviço": 1,
+      "salario": 2100
+    },
+    "4": {
+      "nome": "Daniela",
+      "sexo": "F",
+      "departamento": "RH",
+      "tempo_de_serviço": 2,
+      "salario": 3920
+    },
+    "5": {
+      "nome": "Emílio",
+      "sexo": "M",
+      "departamento": "RH",
+      "tempo_de_serviço": 7,
+      "salario": 4235
+    },
+    "6": {
+      "nome": "Fernando",
+      "sexo": "M",
+      "departamento": "RP",
+      "tempo_de_serviço": 7,
+      "salario": 1200
+    },
+    "7": {
+      "nome": "Gabriela",
+      "sexo": "F",
+      "departamento": "RP",
+      "tempo_de_serviço": 8,
+      "salario": 7234.89
+    },
+    "8": {
+      "nome": "Hernandes",
+      "sexo": "M",
+      "departamento": "TI",
+      "tempo_de_serviço": 6,
+      "salario": 4234.12
+    }
+  }
+
+  return funcionarios 
+
+# 6. Com base no dicionário obtido na questão anterior, faça:
+# a) Uma função que retorne o número de homens e mulheres cadastrados;
+# b) Uma função que retorne um dicionário dos funcionários cujo tempo de serviço seja maior que 5 anos.
+# c) Uma função que receba como argumento o sexo e retorne a média salarial dos funcionários daquele sexo.
